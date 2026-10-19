@@ -94,7 +94,7 @@ Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0
 - #2: TPOT, ms (time_per_output_token_tpot_p50_msec); is present and physically sensible.
 - #3: Time To First Token, ms (ttft_p50_msec); is present and physically sensible.
 - #4: ITL, ms (inter_token_latency_itl_p50_msec); is present and physically sensible.
-- #5: Total request completion time (end_to_end_request_latency_msec) is present and physically sensible.
+- #5: End-to-end request latency p50, ms (end_to_end_request_latency_msec) is present and physically sensible.
 
 ## 3. Metrics Captured
 
@@ -102,7 +102,7 @@ Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0
 - **#2: TPOT, ms** — stored as `time_per_output_token_tpot_p50_msec`.
 - **#3: Time To First Token, ms** — stored as `ttft_p50_msec`.
 - **#4: ITL, ms** — stored as `inter_token_latency_itl_p50_msec`.
-- **#5: Total request completion time** — stored as `end_to_end_request_latency_msec`.
+- **#5: End-to-end request latency p50, ms** — stored as `end_to_end_request_latency_msec`.
 
 ## 4. Hardware Requirements
 
@@ -192,7 +192,7 @@ Expected ranges and gates live in `config/benchmark_config.yaml` under `baseline
 Create cannot finish without `scripts/collect_workload.py`.
 
 **`self_check` overlay rewritten**
-Do not overwrite files listed in `results/overlay_lock.json`.
+`Locked overlay rewritten` means the sibling file and the `sha256` in `results/overlay_lock.json` disagree. The repair is to make `implementation_components/<component-id>/files/<path>`, the sibling path, and that digest the same bytes, then recheck with `create_one_workload.py --validate-only`. Do not replace the overlay with a new collector, and do not regenerate a non-empty sibling.
 
 **Remote SSH drop during setup**
 Reconnect and resume `bash setup.sh --assume-yes`. Do not wipe `.venv` or `.cache`.

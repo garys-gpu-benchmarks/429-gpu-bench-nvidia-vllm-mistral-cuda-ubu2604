@@ -14,7 +14,7 @@ Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0
 | gpu_memory_utilization | `--gpu-memory-utilization` | smoke=0.9, baseline=0.9, extended=0.9 | 0.9 | From Parameter list; see Execution Description With Parameters. |
 | prompt_source | `--prompt-source` | smoke=synthetic, baseline=synthetic, extended=synthetic | synthetic | From Parameter list; see Execution Description With Parameters. |
 | input_len | `--input-len` | smoke=64, baseline=512, extended=1024 | 512 | From Parameter list; see Execution Description With Parameters. |
-| output_len | `--output-len` | smoke=16, baseline=18600, extended=52600 | 18600 | From Parameter list; see Execution Description With Parameters. |
+| output_len | `--output-len` | smoke=16, baseline=12300, extended=29100 | 12300 | From Parameter list; see Execution Description With Parameters. |
 | max_num_seqs | `--max-num-seqs` | smoke=2, baseline=8, extended=16 | 8 | From Parameter list; see Execution Description With Parameters. |
 | max_concurrency | `--max-concurrency` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
 | request_rate | `--request-rate` | smoke=inf, baseline=inf, extended=inf | inf | From Parameter list; see Execution Description With Parameters. |
@@ -38,7 +38,7 @@ summary,ok,50,30,55,80,18,28,40,17,26,36,400
 - **#2: TPOT, ms** — stored as `time_per_output_token_tpot_p50_msec`.
 - **#3: Time To First Token, ms** — stored as `ttft_p50_msec`.
 - **#4: ITL, ms** — stored as `inter_token_latency_itl_p50_msec`.
-- **#5: Total request completion time** — stored as `end_to_end_request_latency_msec`.
+- **#5: End-to-end request latency p50, ms** — stored as `end_to_end_request_latency_msec`.
 
 ## Framework
 
