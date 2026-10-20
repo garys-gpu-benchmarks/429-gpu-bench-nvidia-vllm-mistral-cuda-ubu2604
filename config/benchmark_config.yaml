@@ -14,7 +14,7 @@ sweep:
   output_len:
     smoke: 16
     baseline: 12300
-    extended: 29100
+    extended: 17600
   max_num_seqs:
     smoke: 2
     baseline: 8
