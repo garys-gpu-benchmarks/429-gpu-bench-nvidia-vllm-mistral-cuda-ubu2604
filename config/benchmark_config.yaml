@@ -23,7 +23,7 @@ sweep:
     smoke: 2
     baseline: 8
     extended: 8
-  request_rate: inf
+  request_rate: true
 thresholds:
   generated_token_rate_tokens_s_min: 0.0
   time_per_output_token_tpot_ms_token_min: 0.0

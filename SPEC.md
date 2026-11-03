@@ -2,7 +2,7 @@
 
 ## Execution Description
 
-Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0.3 on 127.0.0.1:8000 for every profile, waits for /v1/models, runs scripts/benchmark_serving.py once with the yaml output length, then stops the server. Measures generated-token rate, TTFT, TPOT, ITL, and end-to-end latency. output_format: csv Sweep dimensions: model_name, dtype, tensor_parallel_size, gpu_memory_utilization, prompt_source, input_len, output_len, max_num_seqs.
+Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0.3 on 127.0.0.1:8000 for every profile, waits for /v1/models, runs scripts/benchmark_serving.py once with the yaml output length, then stops the server. Measures generated-token rate, TTFT, TPOT, ITL, and end-to-end latency. output_format: csv Sweep dimensions: model_name, dtype, tensor_parallel_size, gpu_memory_utilization, input_len, output_len, max_num_seqs, max_concurrency.
 
 ## Parameters
 
@@ -12,12 +12,10 @@ Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0
 | dtype | `--dtype` | smoke=bfloat16, baseline=bfloat16, extended=bfloat16 | bfloat16 | From Parameter list; see Execution Description With Parameters. |
 | tensor_parallel_size | `--tensor-parallel-size` | smoke=1, baseline=1, extended=1 | 1 | From Parameter list; see Execution Description With Parameters. |
 | gpu_memory_utilization | `--gpu-memory-utilization` | smoke=0.9, baseline=0.9, extended=0.9 | 0.9 | From Parameter list; see Execution Description With Parameters. |
-| prompt_source | `--prompt-source` | smoke=synthetic, baseline=synthetic, extended=synthetic | synthetic | From Parameter list; see Execution Description With Parameters. |
 | input_len | `--input-len` | smoke=64, baseline=512, extended=1024 | 512 | From Parameter list; see Execution Description With Parameters. |
 | output_len | `--output-len` | smoke=16, baseline=12300, extended=17600 | 12300 | From Parameter list; see Execution Description With Parameters. |
 | max_num_seqs | `--max-num-seqs` | smoke=2, baseline=8, extended=16 | 8 | From Parameter list; see Execution Description With Parameters. |
 | max_concurrency | `--max-concurrency` | smoke=2, baseline=8, extended=8 | 8 | From Parameter list; see Execution Description With Parameters. |
-| request_rate | `--request-rate` | smoke=inf, baseline=inf, extended=inf | inf | From Parameter list; see Execution Description With Parameters. |
 
 ## Invocation
 
