@@ -1,7 +1,6 @@
 # Merged sweep from Parameters_SmokeBaselineExtend for workload 429.
 # Workbook profile values replace the same keys in a locked overlay.
 sweep:
-  profile: baseline
   model_name: mistralai/Mistral-7B-v0.3
   dtype: bfloat16
   tensor_parallel_size: 1

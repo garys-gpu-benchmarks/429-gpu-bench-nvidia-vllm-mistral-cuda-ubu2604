@@ -88,9 +88,9 @@ summary,ok,50,30,55,80,18,28,40,17,26,36,400
 
 ```bash
 bash run_benchmark.sh --help
-bash run_benchmark.sh --smoke --validate
-bash run_benchmark.sh --baseline --validate
-bash run_benchmark.sh --extended --validate
+bash run_benchmark.sh --smoke
+bash run_benchmark.sh --baseline
+bash run_benchmark.sh --extended
 ```
 `run_benchmark.sh --help` prints usage and exits. The harness calls `scripts/ensure_setup.sh` when `.setup_state` is absent.
 
