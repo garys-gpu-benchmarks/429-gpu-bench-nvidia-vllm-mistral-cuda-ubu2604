@@ -21,7 +21,7 @@ Start python -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-7B-
 Measure vLLM token generation rate
 
 ## Validation Objective
-Validates generated-token rate, TTFT, TPOT, ITL, and end-to-end latency from the real vLLM OpenAI server. Every profile starts python -m vllm.entrypoints.openai.api_server
+Validates token rate, TTFT, TPOT, ITL, and end-to-end latency from the real vLLM server
 
 ## Workload Category
 LLM Inference & Serving
