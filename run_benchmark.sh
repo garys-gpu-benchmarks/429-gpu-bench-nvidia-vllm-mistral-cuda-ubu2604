@@ -31,14 +31,26 @@ Profiles (default: --smoke):
   --extended                    Run extended profile
 
 Parameters (override the profile's value):
-  --model-name <value>          Model or weights identifier to load (smoke/baseline/extended: mistralai/Mistral-7B-v0.3)
-  --dtype <value>               Tensor, element, or storage data type (smoke/baseline/extended: bfloat16)
-  --tensor-parallel-size <n>    Number of GPUs across which model tensors are sharded (smoke/baseline/extended: 1)
-  --gpu-memory-utilization <n>  Fraction of GPU memory the runtime may use (smoke/baseline/extended: 0.9)
+  --model-name <value>          Model or weights identifier to load
+                                  all profiles: mistralai/Mistral-7B-v0.3
+  --dtype <value>               Tensor, element, or storage data type
+                                  all profiles: bfloat16
+  --tensor-parallel-size <n>    Number of GPUs across which model tensors are sharded
+                                  all profiles: 1
+  --gpu-memory-utilization <n>  Fraction of GPU memory the runtime may use
+                                  all profiles: 0.9
   --input-len <n>               Input or prompt token length (smoke 64, baseline 512, extended 1024)
-  --output-len <n>              Number of generated or output tokens (smoke 16, baseline 12300, extended 17600)
-  --max-num-seqs <n>            Maximum sequences the inference engine processes concurrently (smoke 2, baseline 8, extended 16)
-  --max-concurrency <n>         Maximum client-side requests in flight (smoke 2, baseline 8, extended 8)
+  --output-len <n>              Number of generated or output tokens
+                                  smoke:    16
+                                  baseline: 12300
+                                  extended: 17600
+  --max-num-seqs <n>            Maximum sequences the inference engine processes concurrently
+                                  smoke:    2
+                                  baseline: 8
+                                  extended: 16
+  --max-concurrency <n>         Maximum client-side requests in flight
+                                  smoke:             2
+                                  baseline/extended: 8
 
 General options:
   --config <file>               Config file (default: config/benchmark_config.yaml)
