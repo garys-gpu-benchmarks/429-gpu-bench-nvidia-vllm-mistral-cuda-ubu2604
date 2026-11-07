@@ -17,12 +17,11 @@ capture_benchmark_run_command_submitted "$@"
 
 usage() {
   cat <<'USAGE'
+
 Usage: bash run_benchmark.sh [OPTIONS]
 
 Workload Name:          vLLM Token-Generation Benchmark.
 Main Goal:              Measure vLLM token generation rate.
-Validation Objective:   Validates token rate, TTFT, TPOT, ITL, and end-to-end latency from the real
-                        vLLM server.
 Command Tools Executed: Start python -m vllm.entrypoints.openai.api_server on port 8000, then run
                         scripts/benchmark_serving.py.
 

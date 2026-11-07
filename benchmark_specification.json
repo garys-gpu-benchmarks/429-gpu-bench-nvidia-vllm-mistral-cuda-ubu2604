@@ -35,6 +35,11 @@
     "value": "Measure vLLM token generation rate"
   },
   {
+    "field_name": "Command Tools Executed",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Start python -m vllm.entrypoints.openai.api_server on port 8000, then run scripts/benchmark_serving.py"
+  },
+  {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "#1: Generated token rate (output_token_throughput_tokens_sec); #2: TPOT, ms (time_per_output_token_tpot_p50_msec); #3: Time To First Token, ms (ttft_p50_msec); #4: ITL, ms (inter_token_latency_itl_p50_msec); #5: End-to-end request latency p50, ms (end_to_end_request_latency_msec)"
@@ -140,16 +145,6 @@
     "value": "-"
   },
   {
-    "field_name": "Validation Objective",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Validates token rate, TTFT, TPOT, ITL, and end-to-end latency from the real vLLM server"
-  },
-  {
-    "field_name": "Command Tools Executed",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Start python -m vllm.entrypoints.openai.api_server on port 8000, then run scripts/benchmark_serving.py"
-  },
-  {
     "field_name": "run_benchmark Command Plus Options for Smoke Run (One minute or less)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "bash run_benchmark.sh --smoke --validate --model-name mistralai/Mistral-7B-v0.3 --dtype bfloat16 --tensor-parallel-size 1 --gpu-memory-utilization 0.9 --input-len 64 --output-len 16 --max-num-seqs 2 --max-concurrency 2"
@@ -163,6 +158,11 @@
     "field_name": "run_benchmark Command Plus Options for Extended Run (8 to 15 minutes)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "bash run_benchmark.sh --extended --validate --model-name mistralai/Mistral-7B-v0.3 --dtype bfloat16 --tensor-parallel-size 1 --gpu-memory-utilization 0.9 --input-len 1024 --output-len 17600 --max-num-seqs 16 --max-concurrency 8"
+  },
+  {
+    "field_name": "Validation Objective",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Validates token rate, TTFT, TPOT, ITL, and end-to-end latency from the real vLLM server"
   },
   {
     "field_name": "Command Execution Details and Purpose",
