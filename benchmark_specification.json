@@ -202,17 +202,17 @@
   {
     "field_name": "GPU Model",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "H100 SXM 80GB"
-  },
-  {
-    "field_name": "Raw Output Format",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "requests.csv has one row per request. raw_results.csv has summary and summary_repeat of the same p50 metrics"
+    "value": "--"
   },
   {
     "field_name": "Primary Record Granularity",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "one request row per prompt, plus two identical summary rows"
+  },
+  {
+    "field_name": "Raw Output Format",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "requests.csv has one row per request. raw_results.csv has summary and summary_repeat of the same p50 metrics"
   },
   {
     "field_name": "Raw Output Example",
@@ -225,19 +225,19 @@
     "value": "output_token_throughput_tokens_sec, ttft_p50_msec, ttft_p95_msec, ttft_p99_msec, time_per_output_token_tpot_p50_msec, time_per_output_token_tpot_p95_msec, time_per_output_token_tpot_p99_msec, inter_token_latency_itl_p50_msec, inter_token_latency_itl_p95_msec, inter_token_latency_itl_p99_msec, end_to_end_request_latency_msec"
   },
   {
-    "field_name": "Success Criteria",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Completed requests are greater than 0 and the throughput and p50/p95/p99 latency aggregates are finite and positive"
-  },
-  {
     "field_name": "Parser and Normalization Notes",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Parse raw_results.csv; ignore vLLM startup banners. Throughput is total output tokens / wall time. TTFT, TPOT, ITL, and end-to-end latency each have p50, p95, and p99. TPOT = (E2E - TTFT) / (output tokens - 1) from usage.completion_tokens. The summary is written again as summary_repeat. requests.csv is not parsed"
   },
   {
+    "field_name": "Success Criteria",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Completed requests are greater than 0 and the throughput and p50/p95/p99 latency aggregates are finite and positive"
+  },
+  {
     "field_name": "Hardware Config",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "NVIDIA H100 SXM host (20+ vCPUs, 128+ GB RAM, local NVMe), 1x H100 SXM (80 GB HBM3, sm_90, 132 SMs)"
+    "value": "Cloud GPU host such as a RunPod Pod (20+ vCPUs, 128+ GB RAM, local NVMe), 1x NVIDIA data-center GPU (80+ GB HBM; model varies by provider)"
   },
   {
     "field_name": "GPU Architecture",
