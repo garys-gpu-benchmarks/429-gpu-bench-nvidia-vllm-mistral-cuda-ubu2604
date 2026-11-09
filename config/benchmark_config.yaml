@@ -17,7 +17,7 @@ sweep:
   max_num_seqs:
     smoke: 2
     baseline: 8
-    extended: 16
+    extended: 8
   max_concurrency:
     smoke: 2
     baseline: 8

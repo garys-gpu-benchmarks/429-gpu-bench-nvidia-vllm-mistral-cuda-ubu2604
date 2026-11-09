@@ -32,7 +32,7 @@ The model `mistralai/Mistral-7B-v0.3` may be gated on Hugging Face. If its downl
 | `gpu_memory_utilization` | `--gpu-memory-utilization` | 0.9 | 0.9 | 0.9 |
 | `input_len` | `--input-len` | 64 | 512 | 1024 |
 | `output_len` | `--output-len` | 16 | 12300 | 17600 |
-| `max_num_seqs` | `--max-num-seqs` | 2 | 8 | 16 |
+| `max_num_seqs` | `--max-num-seqs` | 2 | 8 | 8 |
 | `max_concurrency` | `--max-concurrency` | 2 | 8 | 8 |
 
 Pick a profile with `--smoke` (default), `--baseline` or `--extended`. Any flag in the table overrides that profile's value:
